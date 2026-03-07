@@ -49,18 +49,36 @@ if run_btn and ticker:
         st.success(f"Loaded {len(df)} trading days for {ticker}")
 
         st.subheader("Key Metrics")
+        metric_label_style = "font-size: 0.7rem; color: var(--text-color-secondary, rgb(128, 132, 149));"
+        metric_value_style = "font-size: 1.5rem; font-weight: 600; color: inherit;"
         c1, c2, c3, c4, c5 = st.columns(5)
-        c1.metric("Max Velocity", f"${summary['max_velocity']:.4f}/day")
-        c2.metric("Max Acceleration", f"${summary['max_acceleration']:.4f}/day²")
-        c3.markdown(
-            f'<div style="padding: 0.25rem 0;"><div style="font-size: 0.875rem; color: var(--text-color-secondary, rgb(128, 132, 149));">'
-            '<span title="Average magnitude of market force (acceleration) acting on price. Higher values indicate stronger or more volatile market movements." style="cursor: help;">'
-            'Avg Force Magnitude &#9432;</span></div>'
-            f'<div style="font-size: 2rem; font-weight: 600; color: inherit;">${summary["average_force_magnitude"]:.4f}</div></div>',
+        c1.markdown(
+            f'<div style="padding: 0.25rem 0;"><div style="{metric_label_style}">Max Velocity</div>'
+            f'<div style="{metric_value_style}">${summary["max_velocity"]:.2f}/day</div></div>',
             unsafe_allow_html=True,
         )
-        c4.metric("Force Direction Changes", summary["force_direction_changes"])
-        c5.metric("Turning Points", len(tp))
+        c2.markdown(
+            f'<div style="padding: 0.25rem 0;"><div style="{metric_label_style}">Max Acceleration</div>'
+            f'<div style="{metric_value_style}">${summary["max_acceleration"]:.2f}/day²</div></div>',
+            unsafe_allow_html=True,
+        )
+        c3.markdown(
+            f'<div style="padding: 0.25rem 0;"><div style="{metric_label_style}">'
+            '<span title="Average magnitude of market force (acceleration) acting on price." style="cursor: help;">'
+            'Avg Force Magnitude &#9432;</span></div>'
+            f'<div style="{metric_value_style}">${summary["average_force_magnitude"]:.2f}</div></div>',
+            unsafe_allow_html=True,
+        )
+        c4.markdown(
+            f'<div style="padding: 0.25rem 0;"><div style="{metric_label_style}">Force Direction Changes</div>'
+            f'<div style="{metric_value_style}">{summary["force_direction_changes"]}</div></div>',
+            unsafe_allow_html=True,
+        )
+        c5.markdown(
+            f'<div style="padding: 0.25rem 0;"><div style="{metric_label_style}">Turning Points</div>'
+            f'<div style="{metric_value_style}">{len(tp)}</div></div>',
+            unsafe_allow_html=True,
+        )
 
         st.subheader("Price (Position) & Turning Points")
         st.plotly_chart(plot_price_interactive(dates, prices, tp, ticker), use_container_width=True)
