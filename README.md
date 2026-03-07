@@ -1,4 +1,1 @@
-# Market Physics Engine
-pip install -r requirements.txt
-streamlit run dashboard.py
-python main.py AAPL 2y
+A physics-based financial research platform. Models stock prices as particles in a dynamic system. Computes derivatives (velocity, acceleration, jerk), market energy, turning points, dominant cycles, Brownian simulations, and predictive signal backtesting.
