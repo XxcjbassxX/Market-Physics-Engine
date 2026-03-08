@@ -1,5 +1,7 @@
 # Market Physics Engine
 
+**App Link:** https://market-physics-engine-3juvzzyewdfhg8tb2uvxct.streamlit.app/
+
 A physics-based financial research platform. Models stock prices as particles in a dynamical system. Computes derivatives (velocity, acceleration, jerk), market energy, turning points, phase space, Brownian simulations, and predictive signal backtesting.
 
 ---
