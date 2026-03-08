@@ -9,7 +9,7 @@ TALL_CHART_HEIGHT = 380
 def _add_rangeslider(fig):
     fig.update_layout(
         xaxis=dict(rangeslider=dict(visible=True, thickness=0.05)),
-        dragmode="zoom",
+        dragmode="pan",
     )
 
 def plot_price_interactive(dates, prices, turning_points=None, ticker="Stock", show_rangeslider=True, height=None):
@@ -38,7 +38,8 @@ def plot_phase_space_interactive(prices, velocity, ticker="Stock", height=None):
         yaxis_title="Velocity",
         template="plotly_white",
         height=h,
-        dragmode="zoom",
+        xaxis=dict(rangeslider=dict(visible=True, thickness=0.05)),
+        dragmode="pan",
     )
     return fig
 
