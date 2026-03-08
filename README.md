@@ -6,35 +6,6 @@ A physics-based financial research platform. Models stock prices as particles in
 
 ---
 
-## Setup
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/YOUR_USERNAME/market_physics_model.git
-   cd market_physics_model
-   ```
-
-2. **Create a virtual environment** (optional but recommended)
-   ```bash
-   python -m venv venv
-   source venv/bin/activate   # Linux/Mac
-   # or: venv\Scripts\activate   # Windows
-   ```
-
-3. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Run the app**
-   ```bash
-   streamlit run dashboard.py
-   ```
-
-5. Open [http://localhost:8501](http://localhost:8501) in your browser.
-
----
-
 ## Features
 
 - **Time range**: 1mo, 3mo, 6mo, 1y, 2y, 5y, 10y, or custom date range
@@ -78,6 +49,29 @@ Uses historical drift (μ) and volatility (σ) to simulate possible future price
 
 ---
 
-## License
+## Setup (Optional)
 
-MIT (or your preferred license)
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/market_physics_model.git
+   cd market_physics_model
+   ```
+
+2. **Create a virtual environment** (optional but recommended)
+   ```bash
+   python -m venv venv
+   source venv/bin/activate   # Linux/Mac
+   # or: venv\Scripts\activate   # Windows
+   ```
+
+3. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Run the app**
+   ```bash
+   streamlit run dashboard.py
+   ```
+
+5. Open [http://localhost:8501](http://localhost:8501) in your browser.
